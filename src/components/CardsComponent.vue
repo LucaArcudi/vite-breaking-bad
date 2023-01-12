@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <h4 class="mt-3">Found {{ store.cardsList.length }} cards</h4>
+
     <div v-for="card in store.cardsList" class="card" style="width: calc(100%/5);">
         <div class="card-body">
             <img class="img-fluid" :src="card.card_images[0].image_url" alt="">
@@ -23,11 +23,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h4 {
-    color: aqua;
-    font-weight: 700;
-}
-
 div.card {
     background-color: beige;
 }

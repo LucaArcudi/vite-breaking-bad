@@ -1,6 +1,4 @@
 <script>
-import axios from "axios"
-
 import { store } from "../store"
 
 import CardsComponent from "./CardsComponent.vue"
@@ -19,31 +17,6 @@ export default {
 
         }
     },
-
-    methods: {
-
-        getCards() {
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0', {
-                params: {
-
-                }
-            })
-                .then((response) => {
-                    console.log(response.data.data);
-                    this.store.cardsList = response.data.data;
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-                .then(function () {
-
-                });
-        }
-    },
-
-    created() {
-        this.getCards();
-    },
 }
 </script>
 
@@ -51,6 +24,7 @@ export default {
     <main>
         <div class="container-lg">
             <div class="row">
+                <h4 class="mt-3">Found {{ store.cardsList.length }} cards</h4>
                 <CardsComponent />
             </div>
         </div>
@@ -66,6 +40,11 @@ main {
 
         div.row {
             background-color: white;
+
+            h4 {
+                color: aqua;
+                font-weight: 700;
+            }
         }
     }
 }
