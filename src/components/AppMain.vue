@@ -24,7 +24,10 @@ export default {
     <main>
         <div class="container-lg">
             <div class="row">
-                <h4 class="mt-3">Found {{ store.cardsList.length }} cards</h4>
+                <div class="col-12">
+                    <h4 class="mt-3">Found {{ store.cardsList.length }} cards</h4>
+                </div>
+
                 <CardsComponent />
             </div>
         </div>
