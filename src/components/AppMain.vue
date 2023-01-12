@@ -1,21 +1,12 @@
 <script>
-import { store } from "../store"
-
 import CardsComponent from "./CardsComponent.vue"
+import CardsFoundNo from "./CardsFoundNo.vue"
 
 export default {
-
     name: "AppMain",
-
     components: {
         CardsComponent,
-    },
-
-    data() {
-        return {
-            store,
-
-        }
+        CardsFoundNo,
     },
 }
 </script>
@@ -24,10 +15,7 @@ export default {
     <main>
         <div class="container-lg">
             <div class="row">
-                <div class="col-12">
-                    <h4 class="mt-3">Found {{ store.cardsList.length }} cards</h4>
-                </div>
-
+                <CardsFoundNo />
                 <CardsComponent />
             </div>
         </div>
@@ -43,11 +31,6 @@ main {
 
         div.row {
             background-color: white;
-
-            h4 {
-                color: aqua;
-                font-weight: 700;
-            }
         }
     }
 }

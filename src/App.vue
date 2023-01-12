@@ -7,6 +7,7 @@ import { store } from "./store"
 
 
 export default {
+
   components: {
     AppHeader,
     AppMain,
