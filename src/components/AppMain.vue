@@ -1,11 +1,18 @@
 <script>
+import { store } from "../store"
+
+
+
 import axios from "axios"
 
 export default {
 
+    name: "AppMain",
+
     data() {
         return {
-            cardsList: [],
+            store,
+
         }
     },
 
@@ -19,7 +26,7 @@ export default {
             })
                 .then((response) => {
                     console.log(response.data.data);
-                    this.cardsList = response.data.data;
+                    this.store.cardsList = response.data.data;
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -40,8 +47,8 @@ export default {
     <main>
         <div class="container-lg">
             <div class="row">
-                <h4 class="mt-3">Found {{ cardsList.length }} cards</h4>
-                <div v-for="card in cardsList" class="card" style="width: calc(100%/5);">
+                <h4 class="mt-3">Found {{ store.cardsList.length }} cards</h4>
+                <div v-for="card in store.cardsList" class="card" style="width: calc(100%/5);">
                     <div class="card-body">
                         <img class="img-fluid" :src="card.card_images[0].image_url" alt="">
                         <h5 class="card-title"> {{ card.name }} </h5>
