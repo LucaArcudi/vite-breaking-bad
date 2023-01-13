@@ -2,11 +2,21 @@
 import CardsComponent from "./CardsComponent.vue"
 import CardsFoundNo from "./CardsFoundNo.vue"
 
+import { store } from "../store"
+
+
 export default {
     name: "AppMain",
     components: {
         CardsComponent,
         CardsFoundNo,
+    },
+
+    data() {
+        return {
+            store,
+
+        }
     },
 }
 </script>
@@ -15,8 +25,8 @@ export default {
     <main>
         <div class="container-lg">
             <div class="row">
-                <CardsFoundNo />
-                <CardsComponent />
+                <CardsFoundNo :cardsListLength="store.cardsList.length" />
+                <CardsComponent :cardsList="store.cardsList" />
             </div>
         </div>
     </main>

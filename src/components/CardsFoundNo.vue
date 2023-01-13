@@ -1,19 +1,14 @@
 <script>
-import { store } from "../store"
-
 export default {
-    data() {
-        return {
-            store,
-
-        }
-    },
+    props: {
+        cardsListLength: Number,
+    }
 }
 </script>
 
 <template>
     <div class="col-12">
-        <h4 class="mt-3">Found {{ store.cardsList.length }} cards</h4>
+        <h4 class="mt-3">Found {{ cardsListLength }} cards</h4>
     </div>
 </template>
 
