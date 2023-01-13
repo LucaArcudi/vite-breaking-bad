@@ -1,5 +1,5 @@
 <script>
-import CardsComponent from "./CardsComponent.vue"
+import CardsList from "./CardsList.vue"
 import CardsFoundNo from "./CardsFoundNo.vue"
 
 import { store } from "../store"
@@ -8,8 +8,8 @@ import { store } from "../store"
 export default {
     name: "AppMain",
     components: {
-        CardsComponent,
         CardsFoundNo,
+        CardsList,
     },
 
     data() {
@@ -26,7 +26,7 @@ export default {
         <div class="container-lg">
             <div class="row">
                 <CardsFoundNo :cardsListLength="store.cardsList.length" />
-                <CardsComponent :cardsList="store.cardsList" />
+                <CardsList />
             </div>
         </div>
     </main>
